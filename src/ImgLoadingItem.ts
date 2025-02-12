@@ -79,6 +79,8 @@ export class ImgLoadingItem {
     this.imgEl.width = this.imgWidth;
     this.imgEl.height = this.imgHeight;
 
+    //clear the node style
+    this.node.style.cssText = "";
 
     // add css variable to the node
     this.node.style.setProperty(`--${this.parent.withPrefix('main-color')}`, this.mainColor);
@@ -87,7 +89,8 @@ export class ImgLoadingItem {
     this.addClass("thumbnail", this.thumbnailEl);
     this.addClass("img", this.imgEl);
     this.addClass("item");
-    this.addClass("item--initialized");    
+    this.addClass("item--initialized");
+    this.node.innerHTML = "";
 
     this.imgEl.onload = () => {
       this.addClass("item--img-loaded");

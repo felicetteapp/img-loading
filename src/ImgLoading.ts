@@ -9,7 +9,6 @@ export class ImgLoading {
   public intersectionObserver: IntersectionObserver | null = null;
 
   constructor() {
-    console.log("ImgLoading");
   }
 
   public withPrefix(text: string) {
@@ -57,8 +56,6 @@ export class ImgLoading {
   }
 
   init(selector: Selector, options: ImgLoadingOptions = {}) {
-    console.log("init", selector, options);
-
     const actualOptions = Object.assign(
       {
         prefix: "il",
