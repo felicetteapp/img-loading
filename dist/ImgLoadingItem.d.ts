@@ -1,0 +1,55 @@
+import { ImgLoading } from "./ImgLoading";
+export declare class ImgLoadingItem {
+    static propsToCheck: string[];
+    fullsize: string;
+    node: HTMLElement;
+    imgEl: HTMLImageElement;
+    thumbnailEl: HTMLImageElement;
+    thumbnail: string;
+    loaded: boolean;
+    error: boolean;
+    imgWidth: number;
+    imgHeight: number;
+    mainColor: string;
+    aspectRatio: string;
+    onLoaded?: Function;
+    onError?: Function;
+    parent: ImgLoading;
+    private thumbnailLoaded;
+    private imgLoaded;
+    private thumbnailLoading;
+    private imgLoading;
+    get isThumbnailLoaded(): boolean;
+    get isImgLoaded(): boolean;
+    get isThumbnailLoading(): boolean;
+    get isImgLoading(): boolean;
+    constructor({ fullsize, thumbnail, onLoaded, onError, parent, imgWidth, imgHeight, node, aspectRatio, mainColor, }: {
+        fullsize: string;
+        thumbnail: string;
+        onLoaded?: Function;
+        onError?: Function;
+        parent: ImgLoading;
+        node?: HTMLElement;
+        imgWidth: number;
+        imgHeight: number;
+        aspectRatio?: string;
+        mainColor?: string;
+    });
+    withPrefix(text: string): string;
+    private addClasses;
+    private removeClasses;
+    private addClass;
+    private removeClass;
+    load(): void;
+    destroy(): void;
+    static elementHasCorrectData(element: HTMLElement, withPrefix: (text: string) => string): boolean;
+    static extractDataFromAttributes(element: HTMLElement, withPrefix: (text: string) => string): {
+        thumbnail: string;
+        fullsize: string;
+        imgWidth: number;
+        imgHeight: number;
+        aspectRatio: string;
+        mainColor: string;
+    };
+    static fromNode(node: HTMLElement, parent: ImgLoading): ImgLoadingItem;
+}

@@ -1,0 +1,25 @@
+{
+  "name": "@felicetteapp/img-loading",
+  "version": "1.0.0",
+  "description": "A basic TypeScript project for demonstration purposes.",
+  "main": "dist/bundle.js",
+  "scripts": {
+    "build": "webpack",
+    "watch": "webpack --watch",
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/felicetteapp/img-loading.git"
+  },
+  "keywords": [],
+  "author": "Facundo Leites",
+  "license": "MIT",
+  "devDependencies": {
+    "ts-loader": "^9.5.2",
+    "typescript": "^5.7.3",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^6.0.1"
+  }
+}
