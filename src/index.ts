@@ -1,2 +1,1 @@
-
-export {ImgLoading  } from "./ImgLoading";
+export { ImgLoading } from './ImgLoading';
