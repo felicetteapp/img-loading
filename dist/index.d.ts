@@ -1,1 +1,0 @@
-export { ImgLoading } from "./ImgLoading";
