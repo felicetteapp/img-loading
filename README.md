@@ -65,6 +65,36 @@ imgLoading.init("[img-loading]", {
 });
 ```
 
+### Modern JavaScript (ES Modules)
+
+For modern bundlers like Vite, Webpack, or Rollup, you can use ES module imports:
+
+```js
+import { ImgLoading } from '@felicetteapp/img-loading';
+
+const imgLoading = new ImgLoading();
+
+imgLoading.init("[img-loading]", {
+  container: document.getElementById("images-container"),
+});
+```
+
+### TypeScript Support
+
+The library includes full TypeScript type definitions. You can import types and use them in your TypeScript projects:
+
+```typescript
+import { ImgLoading, ImgLoadingOptions, Selector } from '@felicetteapp/img-loading';
+
+const options: ImgLoadingOptions = {
+  container: document.getElementById("images-container") as HTMLElement,
+  prefix: "il"
+};
+
+const imgLoading = new ImgLoading();
+imgLoading.init("[img-loading]" as Selector, options);
+```
+
 ### CSS
 
 You can customize the appearance of the images using CSS. The library provides several CSS classes and variables that you can use.
@@ -124,6 +154,8 @@ To build the project, run:
 npm run build
 ```
 
+This will create both CommonJS (`bundle.js`) and ESM (`bundle.esm.js`) builds, along with TypeScript type definitions.
+
 To watch for changes and rebuild automatically, run:
 
 ```sh
@@ -135,3 +167,13 @@ To lint the code, run:
 ```sh
 npm run lint
 ```
+
+## Framework Compatibility
+
+This library is compatible with:
+
+- Regular JavaScript projects
+- TypeScript projects
+- Modern bundlers (Webpack, Rollup)
+- Vite projects
+- React, Vue, Angular, Svelte, and other frameworks that use ES modules
